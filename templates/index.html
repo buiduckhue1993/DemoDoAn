@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+
+    <!-- Favicon Link -->
+    <link rel="icon" href="{{ url_for('static', filename='PIC/icons.png') }}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='STY/style.css') }}">
+
+</head>
+
+
+<body>
+    <header>
+        <div class="logo">
+             <img src="{{ url_for('static', filename='PIC/icons-shop.png') }}" alt="Coffee Bliss Logo" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <!--<li><a href="#contact">Contact</a></li>-->
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="welcome">
+            <h2>Welcome to Coffee Shop Team</h2>
+            <p>Where every cup brings joy and comfort.</p>
+        </div>
+    </section>
+    <main>
+        <section class="container">
+            <h1>Menu</h1>
+
+            <!-- Display the SANPHAM table -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Beverage</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in product_data %}
+                    <tr>
+                        <td>{{ product[1] }}</td>
+                        <td>{{ product[2] }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="3">No product data available</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

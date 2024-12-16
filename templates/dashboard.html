@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Warehouse</title>
+
+    <!-- Link to your existing CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='STY/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='PIC/icons-shop.png') }}" alt="Warehouse Logo" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('warehouse_flow') }}" class="active">Warehouse</a></li>
+                <li><a href="{{ url_for('add_warehouse') }}" class="active">Material</a></li>
+                <li><a href="{{ url_for('supply_er') }}" class="active">Suppler</a></li>
+                <li><a href="{{ url_for('pro_duct') }}" class="active">Product</a></li>
+                <li><a href="{{ url_for('register') }}" class="active">Register</a></li>
+                <li><a href="{{ url_for('logout') }}" class="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container">
+            <h1>Warehouse Dashboard</h1>
+
+            <!-- Display the KHO table -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Material Code (MANL)</th>
+                        <th>Material Name (TENNL)</th>
+                        <th>Quantity (SOLUONG)</th>
+                        <th>Unit (DONVI)</th>
+                        <th>Origin (XUATXU)</th>
+                        <th>Supplier Code (MANCC)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in kho_data %}
+                    <tr>
+                        <td>{{ item[0] }}</td>
+                        <td>{{ item[1] }}</td>
+                        <td>{{ item[2] }}</td>
+                        <td>{{ item[3] }}</td>
+                        <td>{{ item[4] }}</td>
+                        <td>{{ item[5] }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="6">No data available</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+</body>
+</html>

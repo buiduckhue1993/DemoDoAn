@@ -1,0 +1,35 @@
+requirment:
+Python
+and install foloowing command
+mkdir myproject
+cd myproject
+py -3 -m venv .venv 
+.venv\Scripts\activate
+pip install Flask
+pip install flask-login
+pip install mysql-connector-python
+
+run file
+.venv\Scripts\activate
+cd {folder path}\fullstack-coffee-shop
+flask --app app.py run
+
+
+fullstack-coffee-shop/
+├── app.py
+├── fullstack-coffee-shop.zip (Source code)
+├── templates/
+│   ├── index.html
+│   ├── changepass.html
+│   ├── login.html
+│   ├── orderemployee.html
+│   └── register.html
+├── static/
+    ├── PIC/
+    │   ├── icons.png
+    │   ├── icons-shop.png
+    │   ├── esp.jfif
+    │   ├── lat.jfif
+    │   ├── cap.jfif
+    └── STY/
+        └── style.css

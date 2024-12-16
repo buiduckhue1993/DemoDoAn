@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="icon" href="{{ url_for('static', filename='PIC/icons.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='STY/style.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='PIC/icons-shop.png') }}" alt="Coffee Bliss Logo" class="logo-img">
+        </div>
+        <nav>
+            <ul class="navbar">
+                <li><a href="{{ url_for('warehouse_flow') }}" class="nav-item">Warehouse</a></li>
+                <li><a href="{{ url_for('logout') }}" class="logout-btn nav-item">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h2>Register</h2>
+    <form action="{{ url_for('register') }}" method="POST">
+        <input type="text" name="manv" placeholder="Employee ID (MANV)" required>
+        <input type="text" name="manager" placeholder="Manager ID" required>
+        <input type="text" name="ten" placeholder="Full Name" required>
+        <input type="text" name="sodt" placeholder="Phone Number" required>
+        <input type="text" name="cccd" placeholder="ID/CCCD" required>
+        <input type="text" name="diachi" placeholder="Address" required>
+        <input type="text" name="phuong" placeholder="Ward" required>
+        <input type="text" name="quan" placeholder="District" required>
+        <label for="ngaysinh">Date of Birth:</label>
+        <input type="date" name="ngaysinh" id="ngaysinh" required>
+        <input type="text" name="chinhanh" placeholder="Branch" required>
+        <label for="ngaythamgia">Join Date:</label>
+        <input type="date" name="ngaythamgia" id="ngaythamgia" required>
+        <label for="hoatdong">Active:</label>
+        <input type="checkbox" name="hoatdong" id="hoatdong">
+        <input type="text" name="chucvu" placeholder="Role (e.g., staff/manager)" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Register</button>
+    </form>
+    <a href="{{ url_for('h_r') }}">Human Resource</a>
+</body>
+</html>

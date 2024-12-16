@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f5f0;
+    color: #333;
+}
+
+header {
+    background-color: #563d2d;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 2em;
+    font-family: 'Georgia', serif;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ffdd91;
+}
+
+section#welcome {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #ede3d9;
+}
+
+.welcome h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #c5935f;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #ab7b49;
+}
+
+.menu-section {
+    background-color: #f2eee7;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.menu-section h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap; /* Allow the items to wrap into multiple lines */
+    gap: 20px; /* Adjust the gap between items as needed */
+}
+
+.menu-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.menu-item {
+    width: calc(100% / 6 - 20px); /* Ensure each item takes up 1/6th of the row minus any gap */
+    background: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.menu-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.menu-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.menu-item .price {
+    font-weight: bold;
+    color: #c5935f;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+    form input {
+        margin: 10px 0;
+        padding: 10px;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    button[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    button:hover {
+        opacity: 0.9;
+    }
+
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f8f8f8; /* Optional background color */
+}
+
+h4 {
+    font-size: 24px;
+    text-decoration: none;
+    color: black; /* Set text color to black */
+    padding: 10px 20px;
+    border: none; /* Remove border if not needed */
+    border-radius: 0; /* Remove rounded corners */
+    background-color: transparent; /* Ensure no background color */
+    text-align: center; /* Center text inside the tag */
+}
+
+.logout-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.logout-btn:hover {
+    background-color: #d32f2f;
+}
+.order-info {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.order-form {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    width: 50%;
+    margin: auto;
+}
+.order-form input {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.order-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.order-form button:hover {
+    background-color: #45a049;
+}
+.order-table {
+    margin-top: 40px;
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+}
+.order-table th, .order-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+.order-table th {
+    background-color: #f2f2f2;
+}
+.cancel-btn {
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.cancel-btn:hover {
+    background-color: #d32f2f;
+}
+
+.table-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%; /* You can adjust this width as needed */
+    margin-top: 20px;
+    text-align: center;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Navigation bar styling */
+.navbar {
+    display: flex; /* Align items horizontally */
+    justify-content: flex-end; /* Align links to the right */
+    align-items: center; /* Center align vertically */
+    background-color: #5C4033; /* Brown background, adjust as needed */
+    padding: 10px; /* Padding around the nav bar */
+    list-style-type: none; /* Remove bullet points from list items */
+    margin: 0; /* Remove default margin */
+}
+
+.nav-item {
+    margin-left: 15px; /* Add spacing between the links */
+    color: white; /* Link text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make text bold */
+}
+
+.nav-item:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.logout-btn {
+    background-color: #FF5733; /* Bright red background for the logout button */
+    color: white; /* White text for the logout button */
+    padding: 5px 10px; /* Add padding for a button-like appearance */
+    border-radius: 3px; /* Rounded corners for the button */
+    text-decoration: none; /* Remove underline */
+}
+
+.logout-btn:hover {
+    background-color: #FF4500; /* Darker red on hover */
+}
+.flash-messages {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.flash-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.flash-message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flash-message.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+
+.contact-section {
+    background-color: #ede3d9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-section input, .contact-section textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-section button {
+    background-color: #c5935f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+footer {
+    background-color: #563d2d;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 20px;
+}

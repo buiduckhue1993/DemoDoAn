@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Employee</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='STY/style.css') }}">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='PIC/icons-shop.png') }}" alt="Coffee Bliss Logo" class="logo-img">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('logout') }}" class="logout-btn">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section>
+    <h2>Order Items</h2>
+
+    <!-- Add Item Form -->
+    <form action="{{ url_for('orderemployee') }}" method="POST">
+        <select name="product_ID" required>
+            <option value="" disabled selected>Select Product</option>
+            {% for product in products %}
+                <option value="{{ product[0] }}">{{ product[1] }} - ${{ product[2] }}</option>
+            {% endfor %}
+        </select>
+
+        <input type="number" name="quantity" placeholder="Quantity" required min="1">
+        <button type="submit" name="add_item">Add Item</button>
+    </form>
+
+    <!-- Ordered Items -->
+    <h3>Ordered Items</h3>
+    <table border="1" style="border-collapse: collapse; width: 100%; text-align: center;">
+        <thead>
+            <tr style="background-color: #f2f2f2;">
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in order_items %}
+                <tr>
+                    <td>{{ item.product_ID }}</td>
+                    <td>
+                        {% for product in products %}
+                            {% if product[0] == item.product_ID %}
+                                {{ product[1] }}
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{{ item.quantity }}</td>
+                    <td>${{ item.price }}</td>
+                    <td>${{ item.total_price }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <h3>Total Price: ${{ total_price }}</h3>
+
+    <!-- Submit and Clear Buttons -->
+    <form action="{{ url_for('orderemployee') }}" method="POST">
+        <button type="submit" name="submit_order">Submit Order</button>
+    </form>
+    <form action="{{ url_for('orderemployee') }}" method="POST">
+        <button type="submit" name="cancel_order">Clear Order</button>
+    </form>
+    <form action="{{ url_for('cancel_order') }}" method="GET">
+    <!-- Pass the order_id dynamically (replace 'YOUR_ORDER_ID_VARIABLE' with the actual order ID variable) -->
+    <input type="hidden" name="order_id" value="{{ order_id }}"> 
+    <button type="submit" style="margin-top: 10px;">Cancel Specific Order</button>
+</form>
+</section>
+
+</body>
+</html>
